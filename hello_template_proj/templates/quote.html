@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>This is Quote Page</h1>
+
+<table>
+    <tr>
+        <th>  ID   </th><th>  Quote   </th><th>  Author   </th><th>  Category   </th>
+    </tr>
+    {% for data in object_list %}
+    <tr>
+        <td>{{ data.id  }}</td>
+        <td>{{ data.author  }}</td>
+        <td>{{ data.author  }}</td>
+        <td>{{ data.quote_category.title  }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
