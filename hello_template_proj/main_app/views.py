@@ -12,3 +12,11 @@ class HomeView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = "about.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['name']="S A Khan"
+        context['country']="Dhaka"
+        context['listData']=[1,2,3,4,5,6]
+        return context
