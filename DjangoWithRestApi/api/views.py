@@ -6,10 +6,33 @@ from quote.models import QuoteCategory
 from .serializer import QuoteSerializer
 from .serializer import QuoteCategorySerializer
 
+
 class QuoteAPIView(generics.ListAPIView):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
 
+
 class QuoteCategoryAPIView(generics.ListAPIView):
     queryset = QuoteCategory.objects.all()
+    serializer_class = QuoteCategorySerializer
+
+
+class QuoteAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+
+
+class QuoteAPINewView(generics.ListCreateAPIView):
+    queryset = Quote.objects.all().order_by('-id')[:1]
+    serializer_class = QuoteSerializer
+    
+
+#  for Quote Category  get,update and delete
+class QuoteCategoryAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = QuoteCategory.objects.all()
+    serializer_class = QuoteCategorySerializer
+
+#  for Quote Category  add new
+class QuoteCategoryAPINewView(generics.ListCreateAPIView):
+    queryset = QuoteCategory.objects.all().order_by('-id')[:1]
     serializer_class = QuoteCategorySerializer
