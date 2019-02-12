@@ -1,7 +1,31 @@
-  <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+<style>
+ul#menu
+{
+margin-top:14px;
+}
+ul#menu li
+{
+  display: inline;
+  padding: 8px;
+}
+ul#menu li a
+{
+  font-size:18px;
+  color: blue;
+}
+
+</style>
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <ul id="menu">
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/innerPage">Inner Page</a></li>
+            <li><a href="/testPage">Test Page</a></li>
+        </ul>
+        <a class="btn btn-primary" href="#">Sign In</a>
+
     </div>
-  </nav>
+</nav>
+

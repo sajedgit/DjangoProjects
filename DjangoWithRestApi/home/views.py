@@ -1,7 +1,10 @@
 from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
-    template_name = "index.html"
+    # template_name = "index.html"
+    template_name="content.html"
+
+
 
 class InnerPageView(TemplateView):
     template_name="content.html"
