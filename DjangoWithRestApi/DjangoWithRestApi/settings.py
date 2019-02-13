@@ -41,6 +41,15 @@ INSTALLED_APPS = [
 
     # Other Framework
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
+
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
 
     # Custom App
@@ -48,6 +57,19 @@ INSTALLED_APPS = [
     'quote',
     'api',
 ]
+
+SITE_ID = 1
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+REST_FRAMEWORK={
+    'DEFAULT_PERMISSION_CLASSES':(
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

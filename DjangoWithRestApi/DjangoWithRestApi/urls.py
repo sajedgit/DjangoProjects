@@ -21,4 +21,6 @@ urlpatterns = [
     path('',include('home.urls')),
     path('quote/',include('quote.urls')),
     path('api/',include('api.urls')),
+    path('api/user/',include('rest_auth.urls')),
+    path('api/user/registration/',include('rest_auth.registration.urls')),
 ]

@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics,permissions
 
 from quote.models import Quote
 from quote.models import QuoteCategory
@@ -8,6 +8,7 @@ from .serializer import QuoteCategorySerializer
 
 
 class QuoteAPIView(generics.ListAPIView):
+
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
 
@@ -18,11 +19,13 @@ class QuoteCategoryAPIView(generics.ListAPIView):
 
 
 class QuoteAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
 
 
 class QuoteAPINewView(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Quote.objects.all().order_by('-id')[:1]
     serializer_class = QuoteSerializer
     

@@ -15,4 +15,5 @@ urlpatterns = [
     path('quote_category/new/', views.QuoteCategoryAPINewView.as_view()),
 
 
+
 ]
